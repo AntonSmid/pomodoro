@@ -1,0 +1,151 @@
+/* Style for Pomodoro Clock */
+/* ------------------------ */
+
+body {
+  background-image: url(img/still-life-2338823_1280.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center center;
+  background-attachment: fixed;
+  
+  text-align: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+  margin-top: 15%;
+  padding: 10px;
+  border: 3px solid gold;
+  border-radius: 25%;
+}
+
+hr {
+  border-bottom: 1px solid white;
+}
+
+h1, h4 {
+  font-weight: 100;
+}
+
+#labels{
+  width: 100%; 
+}
+
+#labels .lab {
+  display: inline-block;
+  width: 31%;
+  
+}
+
+.inp {
+  text-align: center;
+  width: 40%;
+  font-size: 36px;
+  border: none;
+  border-radius: 4px;
+}
+
+.setBut {
+  height: 50px;
+  margin-bottom: 20px;
+  margin-left: px;
+  margin-right: px;
+}
+
+#work,
+#chill,
+#rounds {
+  display: inline-block;
+  width: 30%;
+}
+
+.centerNo1 {
+  height: 100px;
+  //display: none;
+}
+
+.centerNo2 {
+  height: 100px;
+  display: none;
+}
+
+#mode h2 {
+  display: inline-block;
+  margin: 0px 30px 0px 65px;
+  width: 100px;
+}
+
+#mode #status {
+
+}
+
+#mode #rounds-left {
+  
+}
+
+#work-cd {
+  display: inline-block;
+  float: left;
+  font-size: 58px;
+  text-align: center;
+  padding: 2px;
+  margin: -20px 20px 0 80px;
+  //display: none;
+}
+
+#chill-cd { 
+  display: inline-block;
+  float: left;
+  font-size: 58px;
+  text-align: center;
+  padding: 2px;
+  margin: -20px 20px 0 80px;
+  display: none;
+}
+
+#round-cd {
+  display: inline-block;
+  float: right;
+  font-size: 58px;
+  text-align: center;
+  padding: 2px;
+  margin: -20px 80px 0 40px;
+}
+
+
+.comm-1 {
+  //display: none;
+}
+
+.comm-2 {
+  display: none;
+}
+
+#start, 
+#pause, 
+#reset {
+  width: 140px;
+  height: 45px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+} 
+
+.red-bg {
+  background-color: rgba(254, 0, 0, 0.6);
+}
+
+.green-bg {
+  background-color: rgba(0, 254, 0, 0.6);
+}
+
+
+
+
+
+
+
