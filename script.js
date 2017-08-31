@@ -195,6 +195,7 @@ function countDown(){
     
       if (rounds > 0) {
         // set time for next round
+        $("#status").html("Work");
         workSec = work * 60-1;
         displayTime(workSec);
         chillSec = chill * 60;
