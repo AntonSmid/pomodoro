@@ -193,9 +193,18 @@ function countDown(){
     rounds--;
     $("#round-cd").html(rounds);
     
-    // set time for next round
-    workSec = work * 60;
-    chillSec = chill * 60;
+      if (rounds > 0) {
+        // set time for next round
+        workSec = work * 60-1;
+        displayTime(workSec);
+        chillSec = chill * 60;
+      } else {
+        clearInterval(myTimer);
+        $(".container").removeClass("red-bg");
+        $(".container").removeClass("green-bg");
+        $("#status").html("Done!");
+        $("#work-cd").html("00:00");
+      }
   } 
   
   else {
