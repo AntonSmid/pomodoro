@@ -36,28 +36,21 @@ var display;
       // set Status label
       $("#status").text("Work");
     
+      // display work time
       displayTime(workSec);
-    
-/*      // display work time
-      $("#work-cd").text(workSec);
-      // display chill time
-      $("#chill-cd").text(chillSec);
- */
     
       // display rounds
       $("#round-cd").text(rounds);
       
-      // timer //
+      // run timer //
       myTimer = setInterval(countDown, 1000);
-      run = true;  
-    
+      run = true;     
   })
-
-
 
 
 // click on Pause button
 $("#pause").click(function(){
+  
   if(run){
     clearInterval(myTimer); // ustavi timer
     run = false;
@@ -88,13 +81,7 @@ $("#pause").click(function(){
   })
 
 
-
-
-
-
-
-
-/* ---                      settings Buttons ---                  */
+/* ---    settings Buttons    --- */
 
 // --------  Work ------------ //
 // -- minus --
@@ -149,7 +136,7 @@ $("#r-no-p").click(function(){
   $("#noRounds").val(rounds);
 })
 
-/* ---                        end settings Buttons         --- */
+/* ---        end settings Buttons         --- */
 
 
 
@@ -167,8 +154,7 @@ function display1() {
 };
 
 
-
-// display second screen - count down - //
+// display second screen - Count down - //
 function display2() {
     $(".centerNo1").hide();
     $(".centerNo2").show();
@@ -180,7 +166,6 @@ function display2() {
 
 // --- Timer --- //
 
-
 function countDown(){
   
   if(rounds > 0 && workSec > 0 && chillSec > 0){
@@ -189,43 +174,27 @@ function countDown(){
     $("#status").html("Work");
     
     workSec--;
-    
     displayTime(workSec);
-    
-   /* disMin = Math.floor(workSec / 60);
-    disSec = workSec % 60;  
-    if (disSec < 10) {
-      display = disMin + ":0" + disSec;
-    } else {
-      display = disMin + ":" + disSec;
-    }     
-    $("#work-cd").html(display);*/
   } 
   
   else if (rounds > 0 && workSec === 0 && chillSec > 0){
     $(".container").removeClass("red-bg");
     $(".container").addClass("green-bg");
     $("#status").html("Chill");
+    
     chillSec--;
-    
-    displayTime(chillSec);
-    
-/*    $("#work-cd").html(chillSec); */
+    displayTime(chillSec);    
   } 
   
-  else if (rounds > 0 && workSec === 0 && chillSec === 0){
-
-    
+  else if (rounds > 0 && workSec === 0 && chillSec === 0){    
     $(".container").removeClass("green-bg");
     $(".container").addClass("red-bg");
     
     rounds--;
     $("#round-cd").html(rounds);
     
-    
-    // $("#status").html("Work");
+    // set time for next round
     workSec = work * 60;
-    // $("#work-cd").html(workSec);
     chillSec = chill * 60;
   } 
   
@@ -240,7 +209,7 @@ function countDown(){
 
 
 
-// display conversion 
+// prepare time for display
 function displayTime(secs) {
     disMin = Math.floor(secs / 60);
     disSec = secs % 60;  
@@ -251,38 +220,6 @@ function displayTime(secs) {
     }     
     $("#work-cd").html(display);
 }
-
-
-// var myTimer = setInterval(cdWork, 1000);
-
-
-
-
-// --- Timer --- //
-
-/* --- primer --- 
-function prikaziCas(){
-  // prikazi min
-  // prikazi sec
-  // odbij 1
-};
-
-
-var myTimer = setInterval(prikaziCas, 1000);
-
-clearInterval(myTimer); // ustavi timer
-
-*/ // -- konec primera 
-
-
-
-
-
-
-
-
-
-
 
 
 
