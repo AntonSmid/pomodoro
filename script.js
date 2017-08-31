@@ -5,6 +5,12 @@
 // display the settings screen
 display1();
 
+// audio var
+var buzzer1 = $("#buzzer1")[0];
+var buzzer2 = $("#buzzer2")[0];
+var buzzer3 = $("#buzzer3")[0];
+
+// variables
 var work = $("#minWork").val();
 var chill =$("#minChill").val();
 var rounds = $("#noRounds").val();
@@ -29,6 +35,7 @@ var display;
 
     // show the count down screen
     display2();
+    buzzer1.play();
     
     //set stage for WorkCountDown
       // change the background
@@ -175,6 +182,9 @@ function countDown(){
     
     workSec--;
     displayTime(workSec);
+    if(workSec === 0){
+      buzzer2.play();
+    }
   } 
   
   else if (rounds > 0 && workSec === 0 && chillSec > 0){
@@ -184,6 +194,9 @@ function countDown(){
     
     chillSec--;
     displayTime(chillSec);    
+    if(chillSec === 0){
+      buzzer1.play();
+    }
   } 
   
   else if (rounds > 0 && workSec === 0 && chillSec === 0){    
@@ -204,7 +217,9 @@ function countDown(){
         $(".container").removeClass("red-bg");
         $(".container").removeClass("green-bg");
         $("#status").html("Done!");
-        $("#work-cd").html("00:00");
+        $("#work-cd").html("00:00");     
+        buzzer3.play();
+
       }
   } 
   
@@ -214,6 +229,7 @@ function countDown(){
     $(".container").removeClass("green-bg");
     $("#status").html("Done!");
     $("#work-cd").html("00:00");
+    buzzer3.play();
   }
 };
 
