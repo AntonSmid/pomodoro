@@ -15,12 +15,17 @@ var run;
 var workSec = 0;
 var chillSec = 0;
 
+var disMin;
+var disSec;
+var display;
+
 // .... BUTTONS ....
+
 // click on START button  
   $("#start").click(function(){
     // conwert min to sec
-    workSec = work * 1;    // popravi na 60
-    chillSec = chill * 1;  // popravi na 60
+    workSec = work * 60;    // popravi na 60
+    chillSec = chill * 60;  // popravi na 60
 
     // show the count down screen
     display2();
@@ -30,22 +35,21 @@ var chillSec = 0;
       $(".container").addClass("red-bg");
       // set Status label
       $("#status").text("Work");
-      // display work time
+    
+      displayTime(workSec);
+    
+/*      // display work time
       $("#work-cd").text(workSec);
       // display chill time
       $("#chill-cd").text(chillSec);
+ */
+    
       // display rounds
       $("#round-cd").text(rounds);
       
       // timer //
       myTimer = setInterval(countDown, 1000);
-      run = true;
-
-
-    
-    
-     
-    
+      run = true;  
     
   })
 
@@ -68,10 +72,10 @@ $("#pause").click(function(){
 
 
 
-
-
 // click on reset button
   $("#reset").click(function(){
+    run = true;
+    $("#pause").html("Pause");
     // stop counter
     clearInterval(myTimer);
     // show the Settings screen 
@@ -183,8 +187,19 @@ function countDown(){
     $(".container").removeClass("green-bg");
     $(".container").addClass("red-bg");
     $("#status").html("Work");
+    
     workSec--;
-    $("#work-cd").html(workSec);
+    
+    displayTime(workSec);
+    
+   /* disMin = Math.floor(workSec / 60);
+    disSec = workSec % 60;  
+    if (disSec < 10) {
+      display = disMin + ":0" + disSec;
+    } else {
+      display = disMin + ":" + disSec;
+    }     
+    $("#work-cd").html(display);*/
   } 
   
   else if (rounds > 0 && workSec === 0 && chillSec > 0){
@@ -192,18 +207,26 @@ function countDown(){
     $(".container").addClass("green-bg");
     $("#status").html("Chill");
     chillSec--;
-    $("#work-cd").html(chillSec);
+    
+    displayTime(chillSec);
+    
+/*    $("#work-cd").html(chillSec); */
   } 
   
   else if (rounds > 0 && workSec === 0 && chillSec === 0){
+
+    
     $(".container").removeClass("green-bg");
     $(".container").addClass("red-bg");
+    
     rounds--;
     $("#round-cd").html(rounds);
-    $("#status").html("Work");
-    workSec = work-1;
-    $("#work-cd").html(workSec);
-    chillSec = chill;
+    
+    
+    // $("#status").html("Work");
+    workSec = work * 60;
+    // $("#work-cd").html(workSec);
+    chillSec = chill * 60;
   } 
   
   else {
@@ -216,6 +239,18 @@ function countDown(){
 };
 
 
+
+// display conversion 
+function displayTime(secs) {
+    disMin = Math.floor(secs / 60);
+    disSec = secs % 60;  
+    if (disSec < 10) {
+      display = disMin + ":0" + disSec;
+    } else {
+      display = disMin + ":" + disSec;
+    }     
+    $("#work-cd").html(display);
+}
 
 
 // var myTimer = setInterval(cdWork, 1000);
