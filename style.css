@@ -75,8 +75,9 @@ h1, h4 {
 
 #mode h2 {
   display: inline-block;
-  margin: 0px 30px 0px 65px;
+  margin: 0px 45px 0px 65px;
   width: 100px;
+  font-weight: 400;
 }
 
 #mode #status {
@@ -136,11 +137,17 @@ h1, h4 {
 } 
 
 .red-bg {
-  background-color: rgba(254, 0, 0, 0.6);
+  background-color: rgba(150, 0, 0, 0.6);
 }
 
 .green-bg {
-  background-color: rgba(0, 254, 0, 0.6);
+  background-color: rgba(0, 55, 0, 0.6);
+}
+
+.sig {
+  font-weight: 100;
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 
