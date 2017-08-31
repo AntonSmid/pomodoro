@@ -152,7 +152,7 @@ h1, h4 {
 
 
 #footer {
-   position:absolute;
+   position:fixed;
    bottom:0px;
    margin-bottom: 0;
    width:100%;
