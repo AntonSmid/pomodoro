@@ -1,6 +1,6 @@
 /* javaScript for Pomodoro Clock */
 /* ----------------------------- */
-// $(document).ready(function(){
+$(document).ready(function(){
 
 // display the settings screen
 display1();
@@ -253,4 +253,4 @@ function displayTime(secs) {
 
 
 
-// }) // end of document ready()
+}); /*  / end of document ready() */

@@ -173,6 +173,50 @@ h1, h4 {
   text-decoration: none;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 1.5%;
+  }
+  
+  .title h1 {
+    font-size: 26px;
+  }
+  .title h4 {
+    font-size: 18px;
+  }
+  
+  .sig {
+    font-size: 14px;
+  }
+  
+  #footer {
+    height: 20px;
+    font-size: 12px;
+  }
+  
+}
+
+
+
+@media screen and (max-width: 580px) {
+  #footer {
+    display: none;
+  }
+  .title h1 {
+    font-size: 26px;
+  }
+  .title h4 {
+    font-size: 18px;
+  }
+  
+  body {
+    background: #666;
+  }
+  
+  .container {
+   // margin-top: 3px;
+  }
+}
 
 
 
